@@ -1,0 +1,140 @@
+#info-section a {
+  color: aquamarine;
+}
+
+#info-section {
+  width: 80%;
+  height: max-content;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+#info-section .info-subsection {
+  padding-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#info-section .info-comments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+#info-section .info-comment {
+  width: 100%;
+  height: 65px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  color: #222222;
+
+  background: #FFFFFF;
+  box-shadow: 0px 12px 55px #F2F5FA;
+  border-radius: 16px;
+}
+
+#info-section .info-profile-pic {
+  margin-right: 6px;
+}
+
+#info-section .info-text-container {
+
+}
+
+#info-section .info-text-heading {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #222222;
+}
+
+#info-section .info-text-paragraph {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #73738D;
+}
+
+#info-section .info-checked-list-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+#info-section .info-checked-list-column {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  color: #73738D;
+
+  list-style-image: url("../res/tick.svg");
+  padding: 0;
+  padding-left: 20px;
+}
+
+#info-section .info-checked-list-column:not(:first-child) {
+  margin-left: 20px;
+}
+
+#info-section li:not(:last-child) { 
+  margin-bottom: 10px;  
+}
+
+#info-section .info-sync-img {
+  width: 50px;
+}
+
+#info-section .info-sync-heading {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #222222;
+}
+
+#info-section .info-sync-paragraph {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #73738D;
+}
+
+#info-section .infp-profile-card {
+  margin-top: 50px;
+  padding-top: 25px;
+  padding-left: 16px;
+  /* margin-left: 20%; */
+  /* width: 50%; */
+  /* height: 100%; */
+  background: #FFFFFF;
+  box-shadow: 0px 13px 55px #F2F5FA;
+  border-radius: 20px; 
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+
+#info-section .info-proile-info {
+  
+}

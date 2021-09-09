@@ -1,0 +1,26 @@
+@import "./fonts.css";
+@import "./header.css";
+@import "./hero.css";
+@import "./info.css";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  max-width: 1000px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  /* flex-wrap: wrap;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden; */
+  /* flex-direction: row-reverse; */
+  align-items: center;
+  justify-content: center;
+
+  font-family: Gilroy;
+}
