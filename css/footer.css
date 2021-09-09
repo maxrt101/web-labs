@@ -1,0 +1,33 @@
+#footer {
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#footer h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: #222222;
+
+  margin: 0;
+  padding: 0;
+}
+
+#footer p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  text-align: center;
+  color: #73738D;
+
+  margin: 0;
+  padding: 0;
+}

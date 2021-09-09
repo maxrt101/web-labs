@@ -14,10 +14,7 @@
   align-content: center;
 }
 
-/* #hero-section .hero-image {} */
-
 #hero-section .hero-heading {
-  /* justify-self: left; */
   font-style: normal;
   font-weight: bold;
   color: #222222;
@@ -34,7 +31,6 @@
 }
 
 #hero-section .hero-input {
-  /* filter: drop-shadow(0px 2px 3px rgba(54, 54, 54, 0.5)); */
   filter: drop-shadow(0px 2px 25px rgba(0, 0, 0, 0.04))
           drop-shadow(0px 0px 30px rgba(54, 54, 54, 0.04));
 }

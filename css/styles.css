@@ -2,6 +2,8 @@
 @import "./header.css";
 @import "./hero.css";
 @import "./info.css";
+@import "./banner.css";
+@import "./footer.css";
 
 a {
   text-decoration: none;
@@ -13,12 +15,6 @@ body {
 
   display: flex;
   flex-direction: column;
-  /* flex-wrap: nowrap; */
-  /* flex-wrap: wrap;
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden; */
-  /* flex-direction: row-reverse; */
   align-items: center;
   justify-content: center;
 

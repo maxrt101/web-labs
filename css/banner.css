@@ -1,0 +1,60 @@
+#bottom-banner {
+  width: 80%;
+  height: max-content;
+  padding: 25px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 13px 55px #F2F5FA;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#bottom-banner .bottom-banner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#bottom-banner .bottom-banner-heading {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #222222;
+
+  padding: 0;
+  margin: 0;
+}
+
+#bottom-banner .bottom-banner-paragraph {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  color: #73738D;
+
+  padding: 0;
+  margin: 0;
+}
+
+#bottom-banner .bottom-banner-button {
+  width: 150px;
+
+  background: #26C296;
+  border: 1px solid #26C296;
+  border-radius: 33px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  color: #FFFFFF;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#bottom-banner .bottom-banner-button:hover {
+  color: #26C296;
+  background: #FFFFFF;
+}
