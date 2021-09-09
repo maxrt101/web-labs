@@ -63,3 +63,9 @@ header .nav-btn-try-for-free {
   background-color: #1943EF;
   color: #FFFFFF;
 }
+
+@media screen and (max-width: 1000px) {
+  header {
+    display: none;
+  }
+}

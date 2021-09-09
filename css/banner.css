@@ -58,3 +58,17 @@
   color: #26C296;
   background: #FFFFFF;
 }
+
+@media screen and (max-width: 1000px) {
+  #bottom-banner {
+    /* width: 50%; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  #bottom-banner * {
+    padding: 10px;
+  }
+}

@@ -245,3 +245,20 @@
   line-height: 150%;
   color: #73738D;
 }
+
+@media screen and (max-width: 1000px) {
+  #info-section .info-subsection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  #info-section .info-headings {
+    width: auto;
+  }
+
+  #info-section .info-card {
+    margin-top: 0;
+  }
+}

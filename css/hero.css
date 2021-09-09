@@ -68,10 +68,36 @@
 
   position: relative;
   z-index: 2;
-  float: right
+  float: right;
 }
 
 #hero-section .hero-btn-try-for-free:hover {
   color: #1943EF;
   background: #FFFFFF;
+}
+
+#hero-section .hero-image {
+  width: 300px;
+}
+
+@media screen and (max-width: 1000px) {
+  #hero-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  #hero-section .hero-input-email {
+    position: static;
+    z-index: 0;
+  }
+
+  #hero-section .hero-btn-try-for-free {
+    width: auto;
+
+    position: static;
+    z-index: 0; 
+    float: none;
+  }
 }

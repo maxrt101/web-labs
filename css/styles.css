@@ -20,3 +20,9 @@ body {
 
   font-family: Gilroy;
 }
+
+/* @media screen and (max-width: 1000px) {
+  body * {
+    flex-direction: column;
+  }
+} */
