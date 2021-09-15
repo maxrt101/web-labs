@@ -4,17 +4,31 @@
   <meta charset="UTF-8">
   <title>Relationz</title>
   <link rel="stylesheet", href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/nav.js"></script>
 </head>
 <body>
   <header>
-    <a class="nav-logo" href="index.html">Relationz</a>
-    <a class="nav-btn nav-btn-login">Login</a>
-    <div class="nav-btn-group">
-      <a class="nav-btn" href="#">Services</a>
-      <a class="nav-btn" href="#">Enterprise</a>
-      <a class="nav-btn" href="#">Pricing</a>
+    <div id="alt-nav">
+      <button class="nav-hamburger">&#9776;</button>
+      <a class="nav-logo-link" href="index.html">Relationz</a>
     </div>
-    <a class="nav-btn nav-btn-try-for-free" href="#">Try it for free</a>
+    <ul id="nav">
+      <li class="nav-logo">
+        <a class="nav-logo-link" href="index.html">Relationz</a>
+      </li>
+      <li class="nav-btn nav-btn-login"><a href="#">Login</a></li>
+      <li class="nav-btn-group">
+        <ul class="nav-btn-group"></li>
+          <li class="nav-btn"><a href="#">Services</a></li>
+          <li class="nav-btn"><a href="#">Enterprise</a></li>
+          <li class="nav-btn"><a href="#">Pricing</a></li>
+        </ul>
+      </li>
+      <li class="nav-btn">
+        <a class="nav-btn-try-for-free" href="#">Try it for free</a>
+      </li>
+    </ul>
   </header>
   <section id="hero-section">
     <div class="hero-info">

@@ -74,6 +74,7 @@
 #hero-section .hero-btn-try-for-free:hover {
   color: #1943EF;
   background: #FFFFFF;
+  animation: 1s fadein;
 }
 
 #hero-section .hero-image {

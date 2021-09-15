@@ -57,11 +57,11 @@
 #bottom-banner .bottom-banner-button:hover {
   color: #26C296;
   background: #FFFFFF;
+  animation: 1s fadein;
 }
 
 @media screen and (max-width: 1000px) {
   #bottom-banner {
-    /* width: 50%; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
