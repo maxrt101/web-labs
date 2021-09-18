@@ -1,0 +1,16 @@
+
+# C++
+*.o
+*.a
+*.so
+*.out
+
+# Mac OS
+,DS_Store
+
+# Project Specific
+bin
+json
+http-server
+*.log
+

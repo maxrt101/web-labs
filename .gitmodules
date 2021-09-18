@@ -1,0 +1,6 @@
+[submodule "http-server"]
+	path = http-server
+	url = git@github.com:maxrt101/http-server.git
+[submodule "json"]
+	path = json
+	url = https://github.com/nlohmann/json.git
