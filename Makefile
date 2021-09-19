@@ -1,37 +1,40 @@
 
 TOPDIR   := $(shell pwd)
-BINDIR   := $(TOPDIR)/bin
+PREFIX   := $(TOPDIR)/build
 
 CXX      := clang++
-CXXFLAGS := -std=c++17 -I$(TOPDIR)/app -I$(TOPDIR)/http-server/src -I$(TOPDIR)/json/include
-LDFLAGS  := -L$(TOPDIR)/http-server/src/mrt/bin -L$(TOPDIR)/http-server/bin -lmrt -lpthread -lhttpserver
+CXXFLAGS := -std=c++17 -I$(TOPDIR)/app -I$(PREFIX)/include -I$(TOPDIR)/json/include
+LDFLAGS  := -L$(PREFIX)/lib -lmrt -lpthread -lhttpserver
 
 SRC      := app/main.cc app/car.cc
-TARGET   := $(BINDIR)/app
+TARGET   := $(PREFIX)/bin/app
 
 .PHONY: build
+
+define Dependency
+  if [ ! -f "$1/.built" ]; then \
+    $2; \
+  fi
+endef
 
 build: prepare
 	$(info Building $(TARGET))
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(SRC) -o $(TARGET)
 
 prepare: dependencies
-	mkdir -p $(BINDIR)
+	mkdir -p $(PREFIX)
+	mkdir -p $(PREFIX)/bin
+	mkdir -p $(PREFIX)/include
+	mkdir -p $(PREFIX)/lib
 
 dependencies:
 	$(info Building Dependencies)
-	if [ ! -f http-server/.built ]; then \
-		cd http-server; \
-		make; \
-	fi
-	if [ ! -f json/build/.built ]; then \
-		cd json;       	 		\
-		mkdir build;    		\
-		cd build;       		\
-		cmake ..;       		\
-		cmake --build . ; 	\
-		touch .built;  			\
-	fi
+	$(call Dependency,http-server,cd http-server; make PREFIX=$(PREFIX); touch .built)
+	$(call Dependency,json,cd json; mkdir -p build; cd build; cmake ..; cmake --build .; touch ../.built)
+
+clean:
+	rm http-server/.built
+	rm json/.built
 
 $(V).SILENT:
 

@@ -10,7 +10,6 @@
 
 # Project Specific
 bin
-json
-http-server
+build
 *.log
 
