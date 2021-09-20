@@ -32,15 +32,18 @@ int main(int argc, const char ** argv) {
 
   mrt::Server server;
 
+  // GET /api/car Returns ither all objects or a particular one, if id was sent
   server.addEndpoint({"/api/car", http::Method::GET, [](auto request) {
     http::ResponseCode code = http::OK;
     nlohmann::json response = nlohmann::json::array();
 
     int id = -1;
 
+    // Try to get id from url params
     try {
       id = std::stoi(request.header.params.at("id"));
     } catch (std::exception& e) {
+      // If id is not present - return all objects
       for (auto& car : g_cars) {
         try {
           response.push_back(car.second.to_json());
@@ -55,6 +58,7 @@ int main(int argc, const char ** argv) {
       }
     }
 
+    // If id is valid - get corresponding object and jsonify it
     if (id != -1) {
       try {
         Car car = g_cars.at(id);
@@ -73,7 +77,8 @@ int main(int argc, const char ** argv) {
 
     return http::Response(code).setContent("text/json", response.dump());
   }});
-  
+
+  // POST /api/car Creates new object from json in request body
   server.addEndpoint({"/api/car", http::Method::POST, [](auto request) {
     http::ResponseCode code = http::OK;
     nlohmann::json response;
@@ -92,6 +97,7 @@ int main(int argc, const char ** argv) {
     return http::Response(code).setContent("text/json", response.dump());
   }});
 
+  // DELETE /api/car?id=X Deletes an object and returns it
   server.addEndpoint({"/api/car", http::Method::DELETE, [](auto request) {
     http::ResponseCode code = http::OK;
     nlohmann::json response;
@@ -107,6 +113,7 @@ int main(int argc, const char ** argv) {
       log::error("Invalid ID: %s", e.what());
       code = http::BAD_REQUEST;
       response["error"] = "Invalid ID";
+      id = -1;
     }
 
     if (id != -1) {
