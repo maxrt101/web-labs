@@ -1,7 +1,7 @@
 /**
  * Lab 3
  *
- * @brief  CRUD app
+ * @brief  Server + CRUD App
  * @file   main.cc
  * @author maxrt101
  */
@@ -19,6 +19,14 @@
 
 #include "car.h"
 
+struct Config : public config::HttpServerConfig {
+  std::string log_file = "server.log";
+
+  Config() {
+    root_folder = "htdocs";
+  };
+};
+
 static std::atomic<int> g_id;
 static std::map<int, Car> g_cars;
 
@@ -28,9 +36,35 @@ static int addCar(Car& car) {
 }
 
 int main(int argc, const char ** argv) {
-  log::startLog("server.log");
+  auto args = mrt::args::Parser("Lab3 Server", {
+    {"version", 'F', {"-v", "--version"}, "Shows version"},
+    {"port", 'V', {"-p", "--port"}, "Server Port"},
+    {"root", 'V', {"-r", "--root"}, "Root Folder"},
+  }).parse(argc, argv);
 
-  mrt::Server server;
+  if (args.exists("version")) {
+    std::cout << "Lab 3 Server" << std::endl;
+    return 0;
+  }
+
+  Config conf;
+
+  args.ifExists("port", [&conf](const auto& opts) {
+    try {
+      conf.port = std::stoi(opts[0]);
+    } catch (std::exception& e) {
+      std::cout << "Invalid port: " << opts[0] << std::endl;
+      exit(1);
+    }
+  });
+
+  args.ifExists("root", [&conf](const auto& opts) {
+    conf.root_folder = opts[0];
+  });
+
+  log::startLog(conf.log_file);
+
+  mrt::Server server(conf);
 
   // GET /api/car Returns ither all objects or a particular one, if id was sent
   server.addEndpoint({"/api/car", http::Method::GET, [](auto request) {

@@ -33,8 +33,8 @@ dependencies:
 	$(call Dependency,json,cd json; mkdir -p build; cd build; cmake ..; cmake --build .; touch ../.built)
 
 clean:
-	rm http-server/.built
-	rm json/.built
+	rm -rf http-server/.built
+	rm -rf json/.built
 
 $(V).SILENT:
 
