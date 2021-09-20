@@ -17,10 +17,13 @@ struct Car {
   std::string manufacturer;
   std::string plate;
   unsigned int kilometrage;
+  unsigned int price;
 
   Car() = default;
-  Car(const std::string& model, const std::string& manufacturer, const std::string& plate, int kilometrage);
+  Car(const std::string& model, const std::string& manufacturer,
+      const std::string& plate, unsigned kilometrage, unsigned price);
   nlohmann::json to_json() const;
+  ~Car() = default;
 
   static Car from_json(const nlohmann::json& json);
 };
