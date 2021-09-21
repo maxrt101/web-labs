@@ -29,8 +29,8 @@ prepare: dependencies
 
 dependencies:
 	$(info Building Dependencies)
-	$(call Dependency,http-server,cd http-server; make PREFIX=$(PREFIX); touch .built)
-	$(call Dependency,json,cd json; mkdir -p build; cd build; cmake ..; cmake --build .; touch ../.built)
+	$(call Dependency,http-server,cd http-server && make PREFIX=$(PREFIX) DEBUG=$(DEBUG) && touch .built)
+	$(call Dependency,json,cd json && mkdir -p build && cd build && cmake .. && cmake --build . && touch ../.built)
 
 clean:
 	rm -rf http-server/.built
