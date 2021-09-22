@@ -131,6 +131,35 @@ int main(int argc, const char ** argv) {
     return http::Response(code).setContent("text/json", response.dump());
   }});
 
+  // PUT /api/car?id=X Updates an object
+  server.addEndpoint({"/api/car", http::Method::PUT, [](auto request) {
+    http::ResponseCode code = http::OK;
+    nlohmann::json response;
+    Car car;
+
+    int id = -1;
+
+    try {
+      id = std::stoi(request.header.params.at("id"));
+      car = Car::from_json(nlohmann::json::parse(request.body));
+      g_cars.at(id) = car;
+      response = car.to_json();
+      response["id"] = id;
+    } catch (std::out_of_range& e) {
+      log::error("Invalid ID: %s", e.what());
+      code = http::BAD_REQUEST;
+      response = nlohmann::json();
+      response["error"] = "Invalid ID";
+    } catch (std::exception& e) {
+      log::error("Json Parse Error: %s", e.what());
+      code = http::BAD_REQUEST;
+      response = nlohmann::json();
+      response["error"] = "Json Parse Error";
+    }
+
+    return http::Response(code).setContent("text/json", response.dump());
+  }});
+
   // DELETE /api/car?id=X Deletes an object and returns it
   server.addEndpoint({"/api/car", http::Method::DELETE, [](auto request) {
     http::ResponseCode code = http::OK;
