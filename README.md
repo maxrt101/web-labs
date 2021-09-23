@@ -1,6 +1,8 @@
-# Lab 3
+# Lab 5
 ## Task:
-In this work, you have to make a simple presentation part of a website - View Page (You can find the template of the page by following [the link](https://wireframepro.mockflow.com/view/lviv-iot-crud-js-app).  
+In the last part of working on the website you have to 
+implement all Create/Read/Update/Delete operations which must be made 
+via the corresponding HTTP methods in your REST API.
 
 ## Requirements:
  - Sort of your items option
