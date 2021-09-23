@@ -1,4 +1,4 @@
-function httpAsyncRequest(method, url, successCb, failCb = (status, responseText) => {}) {
+function httpAsyncRequest(method, url, body, successCb, failCb = (status, responseText) => {}) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = () => {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) { // readyState == 4 -> DONE
@@ -8,5 +8,5 @@ function httpAsyncRequest(method, url, successCb, failCb = (status, responseText
     }
   };
   xmlHttp.open(method, url, true); // true for async request
-  xmlHttp.send(null);
+  xmlHttp.send(body);
 }
