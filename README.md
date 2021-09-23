@@ -15,6 +15,7 @@ Dependencies: `git`, `make`, `cmake`, `gcc` or `clang`, binutils(`ar`)
 Run:  
  - Clone the repo  
  - `cd web_labs && git checkout lab3`  
+ - `git submodule update --init --recursive`  
  - `make`  
  - `./build/bin/app`  
 
