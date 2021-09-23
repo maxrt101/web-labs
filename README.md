@@ -1,6 +1,7 @@
-# Lab 3
+# Lab 4
 ## Task:
-In this work, you have to make a simple presentation part of a website - View Page (You can find the template of the page by following [the link](https://wireframepro.mockflow.com/view/lviv-iot-crud-js-app).  
+Description: In this work, you need to continue working and add two new 
+parts to your website - Create & Edit Pages
 
 ## Requirements:
  - Sort of your items option
