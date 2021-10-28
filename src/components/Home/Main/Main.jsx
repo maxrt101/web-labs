@@ -29,17 +29,15 @@ const cars = [
   }
 ]
 
-export default class Main extends React.Component {
-  render() {
-    return (
-      <div className="main">
-        <ul className="item-list">
-          {cars.map((car, id) => <li key={id}><CarTemplate car={car}/></li>)}
-        </ul>
-        <div className="button-container">
-          <button className="btn btn-outline-dark">Show More</button>
-        </div>
+export default function Main() {
+  return (
+    <div className="main">
+      <ul className="item-list">
+        {cars.map((car, id) => <li key={id}><CarTemplate car={car}/></li>)}
+      </ul>
+      <div className="button-container">
+        <button className="btn btn-outline-dark">Show More</button>
       </div>
-    );
-  }
+    </div>
+  );
 }
