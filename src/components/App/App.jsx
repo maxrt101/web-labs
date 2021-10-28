@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../navigation/Header';
 import Footer from '../navigation/Footer';
 
-export default function App()  {
+export default function App() {
   return (
     <div>
       <Header/>
