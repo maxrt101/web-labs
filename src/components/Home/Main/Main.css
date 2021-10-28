@@ -1,0 +1,33 @@
+
+.main {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.main .item-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 0;
+  margin: 0;
+}
+
+.main .item-list li {
+  display: inline;
+}
+
+.main .button-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .more-button {
+  width: 100px;
+}
