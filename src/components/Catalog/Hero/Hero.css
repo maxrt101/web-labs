@@ -1,0 +1,24 @@
+
+.catalog_hero {
+  width: 100%;
+  height: max-content;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  
+  background-color: #f8f9fa;
+}
+
+.hero_search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.hero_search button {
+  margin-left: 5px;
+}
