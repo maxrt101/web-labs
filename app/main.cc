@@ -23,14 +23,14 @@ struct Config : public config::HttpServerConfig {
   std::string log_file = "server.log";
 
   Config() {
-    root_folder = "htdocs";
+    // root_folder = "htdocs";
   };
 };
 
 static std::atomic<int> g_id;
 static std::map<int, Car> g_cars;
 
-static int addCar(Car& car) {
+static int addCar(const Car& car) {
   g_cars[g_id++] = car;
   return g_id.load()-1;
 }
@@ -109,7 +109,9 @@ int main(int argc, const char ** argv) {
       }
     }
 
-    return http::Response(code).setContent("text/json", response.dump());
+    return http::Response(code)
+      .addHeader("Access-Control-Allow-Origin", "*")
+      .setContent("text/json", response.dump());
   }});
 
   // POST /api/car Creates new object from json in request body
@@ -128,7 +130,9 @@ int main(int argc, const char ** argv) {
       response["error"] = "Json Parse Error";
     }
 
-    return http::Response(code).setContent("text/json", response.dump());
+    return http::Response(code)
+      .addHeader("Access-Control-Allow-Origin", "*")
+      .setContent("text/json", response.dump());
   }});
 
   // PUT /api/car?id=X Updates an object
@@ -157,7 +161,9 @@ int main(int argc, const char ** argv) {
       response["error"] = "Json Parse Error";
     }
 
-    return http::Response(code).setContent("text/json", response.dump());
+    return http::Response(code)
+      .addHeader("Access-Control-Allow-Origin", "*")
+      .setContent("text/json", response.dump());
   }});
 
   // DELETE /api/car?id=X Deletes an object and returns it
@@ -189,8 +195,12 @@ int main(int argc, const char ** argv) {
       }
     }
 
-    return http::Response(code).setContent("text/json", response.dump());
+    return http::Response(code)
+      .addHeader("Access-Control-Allow-Origin", "*")
+      .setContent("text/json", response.dump());
   }});
+
+  addCar(Car("Supra", "Toyota", "AB1234AA", 10000, 10000));
 
   server.run();
 
