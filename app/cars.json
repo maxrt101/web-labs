@@ -1,0 +1,44 @@
+[
+  {
+    "model": "Supra",
+    "manufacturer": "Toyota",
+    "plate": "AB1234AA",
+    "kilometrage": 10000,
+    "price": 100000
+  },
+  {
+    "model": "5008",
+    "manufacturer": "Peugeot",
+    "plate": "AB9090AB",
+    "kilometrage": 500,
+    "price": 1000000
+  },
+  {
+    "model": "Zaporozshec",
+    "manufacturer": "Ukraine",
+    "plate": "BP7777BP",
+    "kilometrage": 1000000,
+    "price": 99999999999
+  },
+  {
+    "model": "Tavria",
+    "manufacturer": "Ukraine",
+    "plate": "BA5656BA",
+    "kilometrage": 1000000,
+    "price": 100000
+  },
+  {
+    "model": "2102",
+    "manufacturer": "VAZ",
+    "plate": "AA1415TO",
+    "kilometrage": 100000,
+    "price": 50000
+  },
+  {
+    "model": "Lamborgini",
+    "manufacturer": "Miura",
+    "plate": "CO9392AB",
+    "kilometrage": 9503,
+    "price": 5000000
+  }
+]

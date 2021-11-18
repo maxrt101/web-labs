@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
 import Home from '../../Home';
 import Catalog from '../../Catalog';
+import Item from '../../Catalog/Item';
 import logo from '../../../assets/logo.png';
 import './Header.css';
 
@@ -30,6 +31,9 @@ export default function Header() {
         </Route>
         <Route exact path="/" component={Home}>
           <Home />
+        </Route>
+        <Route exact path={"/car/:id"} component={Item}>
+          <Item />
         </Route>
       </Switch>
     </Router>

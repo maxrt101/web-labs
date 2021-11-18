@@ -13,6 +13,7 @@
 #include "nlohmann/json.hpp"
 
 struct Car {
+  int id;
   std::string model;
   std::string manufacturer;
   std::string plate;
@@ -24,6 +25,8 @@ struct Car {
       const std::string& plate, unsigned kilometrage, unsigned price);
   nlohmann::json to_json() const;
   ~Car() = default;
+
+  std::string getFieldAsString(const std::string& field) const;
 
   static Car from_json(const nlohmann::json& json);
 };

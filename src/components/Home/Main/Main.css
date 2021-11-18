@@ -7,10 +7,10 @@
 .main .item-list {
   width: 100%;
 
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  row-gap: 10px;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 
   padding: 0;

@@ -1,0 +1,40 @@
+
+.item .car {
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #aaaaaa;
+}
+
+.item .left {
+
+}
+
+.item .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-left: 50px;
+}
+
+.item .car-img {
+  width: 400px;
+}
+
+.item .car p {
+  margin: 5px;
+}
+
+.item .car h4 {
+  font-size: 50px;
+}
+
+.item .view-button {
+  display: none;
+}

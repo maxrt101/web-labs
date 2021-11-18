@@ -7,10 +7,10 @@
 .catalog .item-list {
   width: 100%;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  row-gap: 10px;
   flex-wrap: wrap;
-  justify-items: center;
-  align-items: center;
   justify-content: space-around;
 
   padding: 0;

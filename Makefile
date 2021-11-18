@@ -33,6 +33,7 @@ dependencies:
 	$(call Dependency,json,cd json && mkdir -p build && cd build && cmake .. && cmake --build . && touch ../.built)
 
 clean:
+	make -C http-server clean
 	rm -rf http-server/.built
 	rm -rf json/.built
 

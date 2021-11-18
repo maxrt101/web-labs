@@ -11,10 +11,31 @@
   box-shadow: 5px 5px 5px #aaaaaa;
 }
 
+.car .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .car-img {
   width: 200px;
 }
 
 .car p {
   margin: 0;
+}
+
+.car button {
+  margin-right: 5px;
+  margin-right: 5px;
+}
+
+.car button * {
+  text-decoration: none;
 }

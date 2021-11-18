@@ -7,6 +7,7 @@ Car::Car(const std::string& model, const std::string& manufacturer,
 
 nlohmann::json Car::to_json() const {
   nlohmann::json result {
+    {"id", id},
     {"model", model},
     {"manufacturer", manufacturer},
     {"plate", plate},
@@ -16,6 +17,23 @@ nlohmann::json Car::to_json() const {
   return result;
 }
 
+std::string Car::getFieldAsString(const std::string& field) const {
+  if (field == "id") {
+    return std::to_string(id);
+  } else if (field == "model") {
+    return model;
+  } else if (field == "manufacturer") {
+    return manufacturer;
+  } else if (field == "plate") {
+    return plate;
+  } else if (field == "kilometrage") {
+    return std::to_string(kilometrage);
+  } else if (field == "price") {
+    return std::to_string(price);
+  }
+
+  return "";
+}
 
 Car Car::from_json(const nlohmann::json& json) {
   Car car;
