@@ -21,3 +21,18 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# C++
+*.o
+*.a
+*.so
+*.out
+
+# Mac OS
+,DS_Store
+
+# Project Specific
+bin
+build
+*.log
+
