@@ -5,8 +5,8 @@ import Footer from '../navigation/Footer';
 export default function App() {
   return (
     <div>
-      <Header/>
-      <Footer/>
+        <Header/>
+        <Footer/>
     </div>
   );
 }

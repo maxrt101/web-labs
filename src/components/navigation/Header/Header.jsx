@@ -1,7 +1,8 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import Home from '../../Home';
 import Catalog from '../../Catalog';
+import Cart from '../../Cart';
 import Item from '../../Catalog/Item';
 import logo from '../../../assets/logo.png';
 import './Header.css';
@@ -26,8 +27,8 @@ export default function Header() {
         <Route exact path="/catalog" component={Catalog}>
           <Catalog />
         </Route>
-        <Route path="/cart">
-          <div>Cart</div>
+        <Route path="/cart" component={Cart}>
+          <Cart />
         </Route>
         <Route exact path="/" component={Home}>
           <Home />

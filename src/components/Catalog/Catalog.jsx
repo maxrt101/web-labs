@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Main from './Main'
-import {getCars, getFilteredBy, getSearched} from '../../requests'
+import { getCars, getFilteredBy, getSearched } from '../../requests'
 import Loading from '../navigation/Loading';
 import './Catalog.css'
-import axios from 'axios';
 
 export default function Catalog(props) {
   const[cars, setCars] = useState(null);

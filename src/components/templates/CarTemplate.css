@@ -23,6 +23,18 @@
   align-items: center;
 }
 
+.car .cart-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car .cart-buttons div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .car-img {
   width: 200px;
 }
